@@ -24,15 +24,39 @@ body{
 }
 
 .col-main{
-	width: 750px;
+	width: 745px;
 	border: 1px solid blue;
-	height: 100%;
+	height: ;
 	float: right;
+	text-align: left;
 }
 
 .col-sub{
-	height: 100%;
+	text-align: left;
 	width: 190px;
 	border: 1px solid red;
 	float: left;
+}
+.clear{
+	clear: both;
+}
+.stu{
+	display: inline-block;
+	width: 240px;
+	height: 150px;
+	border: 1px solid green;
+	position: relative;
+}
+
+.stu img{
+	width: 120px;
+	height: 120px;
+	position: absolute;
+	left: 5px;
+	top: 5px;
+}
+
+.stu p{
+	margin-left: 145px;
+	margin-top: 5px;
 }
