@@ -1,0 +1,38 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+
+body{
+	text-align:center;
+}
+.main{
+	width: 940px;
+	margin: auto;
+}
+#header{
+	
+}
+#content{
+	min-height: 300px;
+}
+#footer{
+	margin-top:10px;
+	color: gray;
+	text-align: center;
+}
+
+.col-main{
+	width: 750px;
+	border: 1px solid blue;
+	height: 100%;
+	float: right;
+}
+
+.col-sub{
+	height: 100%;
+	width: 190px;
+	border: 1px solid red;
+	float: left;
+}
