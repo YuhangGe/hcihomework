@@ -120,6 +120,11 @@ function finishDiandao(){
 	},'json');
 }
 
+
+$(function(){
+	$('#popDate').datepick({dateFormat: 'yyyy-mm-dd'});
+})
+
 function view(){
 	
 }
