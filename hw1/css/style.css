@@ -46,6 +46,7 @@ body{
 	height: 150px;
 	border: 1px solid green;
 	position: relative;
+	margin: 2px;
 }
 
 .stu img{
@@ -59,4 +60,38 @@ body{
 .stu p{
 	margin-left: 145px;
 	margin-top: 5px;
+}
+
+#welDlg{
+	display: none;
+}
+
+#panel{
+	height: 480px;
+	display: none;
+}
+#ctrl{
+	text-align: right;
+	display: none;
+}
+#ctrl a{
+	color: orange;
+	margin-right: 5px;
+	
+}
+#ctrl .disable{
+	color: gray;
+	text-decoration: none;
+	cursor: default;
+}
+
+#tip{
+	position: absolute;
+	left: 250px;
+	top:250px;
+}
+
+#container{
+	position: relative;
+	height: 500px;
 }
