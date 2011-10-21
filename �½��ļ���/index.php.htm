@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html><head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>花名册系统</title>
+		<link rel="stylesheet" href="index.php_files/style.css">
+		<link rel="stylesheet" href="index.php_files/flora.css">
+		<script type="text/javascript">
+			//在前端存储当前教师信息和学生信息，逻辑全部由前端实现
+			var teacher={"id":"1","name":"\u51af\u6842\u7115","class_id":"1","class_name":"\u4eba\u673a\u4ea4\u4e92\u7684\u8f6f\u4ef6\u5de5\u7a0b\u65b9\u6cd5"};
+			var students=[{"id":"1","num":"081251041","name":"\u845b\u7fbd\u822a"},{"id":"2","num":"081251037","name":"\u9ad8\u8fd0"},{"id":"3","num":"081251040","name":"\u845b\u99a8\u9633"},{"id":"4","num":"081251042","name":"\u9f9a\u6668"},{"id":"5","num":"081251001","name":"\u67d0\u67d0\u4e00"},{"id":"6","num":"081251002","name":"\u67d0\u67d0\u4e8c"},{"id":"7","num":"081251003","name":"\u67d0\u67d0\u4e09"},{"id":"8","num":"081251004","name":"\u67d0\u67d0\u56db"},{"id":"9","num":"081251005","name":"\u67d0\u67d0\u4e94"},{"id":"10","num":"081251006","name":"\u67d0\u67d0\u516d"},{"id":"11","num":"081251007","name":"\u67d0\u67d0\u4e03"},{"id":"12","num":"081251008","name":"\u67d0\u67d0\u516b"},{"id":"13","num":"081251009","name":"\u67d0\u67d0\u4e5d"},{"id":"14","num":"081251010","name":"\u67d0\u67d0\u5341"},{"id":"15","num":"081251011","name":"\u67d0\u67d0\u7532"},{"id":"16","num":"081251012","name":"\u67d0\u67d0\u4e59"},{"id":"17","num":"081251013","name":"\u67d0\u67d0\u4e19"},{"id":"18","num":"081251014","name":"\u67d0\u67d0\u4e01"},{"id":"19","num":"081251015","name":"\u67d0\u67d0\u536f"}];
+		</script>
+		<script type="text/javascript" src="index.php_files/jquery-1.js"></script>
+		<script type="text/javascript" src="index.php_files/jquery.js"></script>
+		<script type="text/javascript" src="index.php_files/index.js"></script>
+	</head>
+	<body>
+		<div class="main">
+			<div id="header">
+				<h1>花名册系统</h1>
+				<div style="text-align: left;">
+					欢迎您，<span>冯桂焕</span>老师。当前课堂：<span>人机交互的软件工程方法</span>
+				</div>
+			</div>
+			<div id="content">
+				<div class="col-main">
+					<div id="container">
+						<div style="display: block;" id="panel"><div class="stu"><img src="index.php_files/081251041.png"><p>葛羽航</p><p>081251041</p><p><input id="stu-0" onchange="setBad(0);" type="checkbox">标记为未到</p></div><div class="stu"><img src="index.php_files/081251037.png"><p>高运</p><p>081251037</p><p><input id="stu-1" onchange="setBad(1);" type="checkbox">标记为未到</p></div><div class="stu"><img src="index.php_files/081251040.png"><p>葛馨阳</p><p>081251040</p><p><input id="stu-2" onchange="setBad(2);" type="checkbox">标记为未到</p></div><div class="stu"><img src="index.php_files/081251042.png"><p>龚晨</p><p>081251042</p><p><input id="stu-3" onchange="setBad(3);" type="checkbox">标记为未到</p></div><div class="stu"><img src="index.php_files/081251001.png"><p>某某一</p><p>081251001</p><p><input id="stu-4" onchange="setBad(4);" type="checkbox">标记为未到</p></div><div class="stu"><img src="index.php_files/081251002.png"><p>某某二</p><p>081251002</p><p><input id="stu-5" onchange="setBad(5);" type="checkbox">标记为未到</p></div><div class="stu"><img src="index.php_files/081251003.png"><p>某某三</p><p>081251003</p><p><input id="stu-6" onchange="setBad(6);" type="checkbox">标记为未到</p></div><div class="stu"><img src="index.php_files/081251004.png"><p>某某四</p><p>081251004</p><p><input id="stu-7" onchange="setBad(7);" type="checkbox">标记为未到</p></div><div class="stu"><img src="index.php_files/081251005.png"><p>某某五</p><p>081251005</p><p><input id="stu-8" onchange="setBad(8);" type="checkbox">标记为未到</p></div></div>
+						<div style="display: block;" id="ctrl">
+							<a class="disable" id="pre_page" href="javascript:pre_page();">上一页</a><a class="" id="next_page" href="javascript:next_page();">下一页</a><a href="javascript:finishDiandao();">完成点名</a>
+						</div>
+						<div style="display: none;" id="tip">
+							<input id="beginDD" value="开始点到" onclick="diandao_all();" type="button">
+						</div>
+					</div>
+					<div id="view">
+						<h5>查看点到和检查记录</h5>
+						<div>选择日期：<input class="hasDatepick" id="popDate" type="text"><input value="" type="button"></div>
+					</div>
+				</div>
+				<div class="col-sub">
+					<ul>
+						<li><a href="javascript:diandao('all');">完整点名</a></li>
+						<li><a href="javascript:diandao('rand');">随机点到</a></li>
+						<li><a href="javascript:choucha();">作业抽查</a></li>
+						<li><a href="javascript:view();">查看记录</a></li>
+					</ul>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div id="footer">
+				花名册系统 ©2010-2011 221宿舍小组
+			</div>
+		</div>
+	
+</body></html>

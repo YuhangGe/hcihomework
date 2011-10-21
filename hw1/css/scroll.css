@@ -1,0 +1,27 @@
+* {
+	padding: 0px;
+	margin: 0px;
+}
+#part1{
+	height: 400px;
+	display: none;
+}
+#part2{
+	height: 500px;
+	display: none;
+}
+#part3{
+	height: 800px;
+	display: none;
+}
+
+#mask{
+	position: absolute;
+	left: 0px;
+	top:0px;
+	height: 600px;
+	width: 300px;
+	background: blue;
+	opacity: 0.4;
+	display: none;
+}

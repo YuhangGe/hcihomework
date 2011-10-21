@@ -39,7 +39,7 @@
 			</div>
 			<div id="content">
 				<div class="col-main">
-					<div id="container" style="display: none;">
+					<div id="container">
 						<div id="panel">
 																			
 						</div>
