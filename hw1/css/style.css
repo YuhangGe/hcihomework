@@ -6,97 +6,199 @@
 
 body{
 	text-align:center;
+	color:#333333;
+	font-family: "微软雅黑","宋体";
+	background: #F8FBFD;
 }
-.main{
-	width: 940px;
-	margin: auto;
+
+.part{
+	display: none;
 }
-#header{
-	
+
+#p_Login{
+	display: block;
 }
-#content{
-	min-height: 300px;
+label{
+	font-weight: bold;
+}
+
+input[type="text"], input[type="password"], textarea {
+    color: #999999;
+    display: inline-block;
+    font-family: inherit;
+    font-size: 2.25em;
+    line-height: 1.2;
+    margin-bottom: 24px;
+    max-width: 630px;
+    padding: 2px;
+}
+#wrap_all{
+	width:960px;
+	margin: 0px auto;
+	padding: 0px 20px;
+	text-align: left;
+	min-height: 500px;
 }
 #footer{
-	margin-top:10px;
+	background: #292929;
+	color: white;
+	text-align: center;
+	margin-top:100px;
 	color: gray;
 	text-align: center;
 }
 
-.col-main{
-	width: 745px;
-	border: 1px solid blue;
-	height: ;
-	float: right;
-	text-align: left;
+.title h1{
+	color: #333333;
+    float: left;
+    font-family: "微软雅黑","宋体";
+    font-size: 2.25em;
+    font-style: italic;
+    line-height: 1;
+    margin: 0;
+    padding: 6px 0 0;
 }
-
-.col-sub{
-	text-align: left;
-	width: 190px;
-	border: 1px solid red;
-	float: left;
-}
-.clear{
-	clear: both;
-}
-.stu{
-	display: inline-block;
-	width: 240px;
-	height: 150px;
-	border: 1px solid green;
+.title h2{
+	margin-bottom: 0.5em;
+    margin-top: 1em;
+    padding-top: 16px;
 	position: relative;
-	margin: 2px;
 }
-
-.stu img{
-	width: 120px;
-	height: 120px;
+.title a{
 	position: absolute;
-	left: 5px;
-	top: 5px;
+	right:0px;
+	font-size: 16px;
+	bottom: 0px;
+	text-decoration: none;
+	color: #0059F6;
+}
+h2 span{
+	
+    font-size: 36px;
+    font-style: italic;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+h2{
+	border-bottom: 2px solid #333333;
+    font-size: 2.25em;
+    font-weight: bold;
+}
+div .clear{
+	clear: both;
+	height: 1%;
 }
 
-.stu p{
-	margin-left: 145px;
+.big_btn{
+	background-color: #0059F6;
+    border: 0 none;
+    border-radius: 44px;
+    color: #F8FBFD;
+    cursor: pointer;
+    font-size: 36px;
+    font-weight: bold;
+    margin: 10px 0;
+    min-width: 222px;
+    padding: 27px 44px 21px;
+    text-align: center;
+}
+.content{
+	min-height: 450px;
+}
+.class_div{
+	float: left;
+    margin-left: -5px;
+    margin-right: 10px;
+    padding: 5px;
+    width: 298px;
+    border: 1px solid #F8FBFD;
+    border-radius: 8px 8px 8px 8px;
+   
+}
+.class_div:hover{
+	border-color: #0059F6;
+	cursor: pointer;
+}
+
+.class_div h4{
+	color:#0059F6;
+	font-size: 1.5em;
+    line-height: 1.25;
+    margin: 5px;
+    padding-left: 10px;
+}
+.info{
+	color: #999999;
+	font-family: "宋体";
+	padding-left: 15px;
+	margin-bottom: 5px;
+}
+
+.person{
+	border: 1px solid #F8FBFD;
+    border-radius: 8px 8px 8px 8px;
+    float: left;
+    cursor: pointer;
+    width: 155px;
+    height: 190px;
+    padding: 5px;
+    margin-right: 25px;
+    margin-bottom: 15px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.person:hover{
+	border-color: #0059F6;
+}
+
+.person img{
+	border: 0px;
+	width: 130px;
+	height: 130px;
+	border: 2px solid black;
+	border-radius: 2px;
 	margin-top: 5px;
 }
 
-#welDlg{
-	display: none;
+.person p{
+	color: #999999;
+	text-align: center;
+}
+.ctrl{
+	position: relative;
+	padding-right: 23px;
 }
 
-#panel{
-	height: 480px;
-	display: none;
+.ctrl a{
+	font-size: 20px;
+	color: #0059F6;
+	margin-left: 10px;
+	float: right;
+	top: -5px;
 }
-#ctrl{
-	text-align: right;
-	display: none;
+
+.little_btn{
+	background-color: #0059F6;
+    border: 0 none;
+    border-radius: 8px;
+    color: #F8FBFD;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 10px;
+    padding: 5px 10px 5px;
+    text-align: center;
+    width: 120px;
+    float: right;
 }
-#ctrl a{
+
+.little_btn:hover{
 	color: orange;
-	margin-right: 5px;
-	
 }
-#ctrl .disable{
-	color: gray;
-	text-decoration: none;
+
+.ctrl .disable{
+	background: gray;
+	color: #292929;
 	cursor: default;
-}
-
-#tip{
-	position: absolute;
-	left: 250px;
-	top:250px;
-}
-
-#container{
-	position: relative;
-	height: 500px;
-}
-
-#view{
-	position: relative;
-	height: 500px;
 }

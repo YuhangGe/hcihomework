@@ -88,6 +88,7 @@ jQuery.fx.ScrollTo = function (e, o)
 };
 
 jQuery.fn.mask=function(color,opacity){
+	$.log(this);
 	if(typeof color === 'number'){
 		opacity=color;
 		color="white";
@@ -96,32 +97,22 @@ jQuery.fn.mask=function(color,opacity){
 		color=color;
 		if(typeof opacity !== 'number')
 			opacity=0.6;
+	}else{
+		color="white";
+		opacity=0.6;
 	}
 	var p=jQuery.getPos(this[0]);
-	var w=jQuery.getClient().w;
-	jQuery('<div class="mask">').css({'background':color,'opacity':opacity,'left':0,'top':p.y,'height':p.h,'width':w,'position':'absolute'}).appendTo(this);
+	jQuery('<div class="mask">').css({'background':color,'opacity':opacity,'left':p.x,'top':p.y,'height':p.h,'width':p.w,'position':'absolute'}).appendTo(this);
 	
 }
 
+jQuery.fn.removeMask=function(){
+	//this.find('.mask').remove();
+}
 $.log=function(msg){
 	if(console)
 		console.log(msg);
 }
 
 
-$(function(){
-	$('#btn1').click(function(){
-		$('#part1').show().ScrollTo(1000);
-		$('#cmd').mask('blue',0.4);
-	});
-	$('#btn2').click(function(){
-		$('#part2').show().ScrollTo(1000);
-	});
-	$('#btn3').click(function(){
-		$('#part3').show().ScrollTo(1000);
-		
-	});
-	$('#back3').click(function(){
-		$('#cmd').ScrollTo(1000);
-	})
-});
+
