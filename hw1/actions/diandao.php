@@ -9,10 +9,13 @@
 	$rid=$_REQUEST['rid'];
 	
 	require 'db.php';
+	
+	$query="DELETE FROM stu_rec WHERE rid='$rid';";
+	mysql_query($query);
+	
 	for($i=0,$t=count($badid);$i<$t;$i++){
 		$sid=$badid[$i];
 		$query="INSERT INTO stu_rec (sid,rid) VALUES('$sid','$rid');";
-		//echo $query;
 		mysql_query($query);
 	}
 	echo json_encode(array(

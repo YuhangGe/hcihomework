@@ -88,7 +88,9 @@ jQuery.fx.ScrollTo = function (e, o)
 };
 
 jQuery.fn.mask=function(color,opacity){
-	$.log(this);
+	//$.log(this);
+	this.removeMask();
+	
 	if(typeof color === 'number'){
 		opacity=color;
 		color="white";
@@ -102,12 +104,12 @@ jQuery.fn.mask=function(color,opacity){
 		opacity=0.6;
 	}
 	var p=jQuery.getPos(this[0]);
-	jQuery('<div class="mask">').css({'background':color,'opacity':opacity,'left':p.x,'top':p.y,'height':p.h,'width':p.w,'position':'absolute'}).appendTo(this);
+	jQuery('<div class="mask">').css({'background':color,'opacity':opacity,'left':0,'top':0,'height':p.h,'width':p.w,'position':'absolute','z-index':9999}).appendTo(this);
 	
 }
 
 jQuery.fn.removeMask=function(){
-	//this.find('.mask').remove();
+	this.find('.mask').remove();
 }
 $.log=function(msg){
 	if(console)

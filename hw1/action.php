@@ -1,5 +1,5 @@
 <?php
-	$allow_act=array('login','record','diandao');
+	$allow_act=array('login','record','diandao','view','logout');
 	if(empty($_REQUEST['action']) || ! in_array($_REQUEST['action'],$allow_act)){
 		echo 'wrong';
 		exit();

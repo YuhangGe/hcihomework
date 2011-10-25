@@ -13,8 +13,14 @@
 	$query="SELECT * FROM record WHERE to_days(date)=to_days('$date') AND cid='$cid' AND type='$type';";
 	$result=db_query($query);
 	$r=mysql_fetch_array($result);
+	$bad_id=array();
 	if($r){
 		$id=$r['id'];
+		$query="SELECT * FROM stu_rec WHERE rid='$id';";
+		$result=db_query($query);
+		while($sid=mysql_fetch_array($result)){
+			$bad_id[]=$sid['sid'];
+		}
 	}else{
 		$query="INSERT INTO record (date,type,cid) VALUES('$date' ,'$type','$cid');";
 		
@@ -26,7 +32,8 @@
 		'status'=>'success',
 		'id'=>$id,
 		'date'=>$date,
-		'type'=>$type
+		'type'=>$type,
+		'bad_id'=>$bad_id
 	));
 	
 ?>
