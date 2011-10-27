@@ -305,7 +305,7 @@ function back_set() {
 	$('#c_Set').removeMask();
 	$('#t_Set a').html("返回上一步").unbind().click(back_func);
 	$('#p_Set').ScrollTo(300,function(){
-			$('#p_Person').hide();
+        $('#p_Person').hide();
 	});
 }
 
@@ -325,6 +325,7 @@ function goto_dian_rnd() {
 	$('#radio_2').attr("checked", false);
 	$('#t_Func a').html("返回到此步").unbind().click(back_func);
 	$('#t_Set a').html("返回上一步").unbind().click(back_func);
+    $('#c_Set').removeMask();
 	$('#p_Set').show().ScrollTo(500);
 
 }
