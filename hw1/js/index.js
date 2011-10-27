@@ -49,7 +49,7 @@ function begin_diandao(type, num) {
 			$('#i_cname').html(cur_t.class_name);
 			$('#finish_dian').html("完成点名");
 			$('#c_Person .ctrl').removeMask();
-			$('#p_Person').show().ScrollTo(600);
+			$('#p_Person').show().ScrollTo(500);
 		} else {
 
 			alert("出现错误！");
@@ -174,7 +174,7 @@ $(function() {
 	});
 	$('#btn_dian').click(function() {
 		var num = 0;
-		if($('#radio_1').attr('checked') =="checked") {
+		if($('#radio_1').attr('checked') == "checked") {
 			num = Number($('#t_pnum').val());
 		} else {
 			num = Math.floor(Number($('#t_pbfb').val()) / 100 * students.length);
@@ -239,8 +239,7 @@ function login_event(argument) {
 			$('#t_Login a').html(rtn.name + "，登出");
 			$('#c_Class').html('');
 			for(var i = 0; i < rtn.classes.length; i++) {
-				var c = rtn.classes[i];
-				(function() {
+				var c = rtn.classes[i]; (function() {
 					var cc = c;
 					$('<div class="class_div">').html('<h4 class="c_title">' + c.name + '</h4>').appendTo('#c_Class').click(function() {
 						goto_class(cc.id, cc.name);
@@ -252,7 +251,7 @@ function login_event(argument) {
 			$('<div class="clear">').appendTo('#c_Class');
 			cur_t = rtn;
 			$('#t_Class a').hide();
-			$('#p_Class').show().ScrollTo(600);
+			$('#p_Class').show().ScrollTo(500);
 			$('#c_Login').mask('#F8FBFD');
 			$('#t_Login a').show().click(event_logout);
 			$("#loginBtn").val("已登陆");
@@ -279,32 +278,35 @@ function goto_class(cid, cname) {
 	$('#t_Class a').show();
 	$('#t_Func a').html("返回上一步").unbind('click').click(back_class);
 	$('#c_Func').removeMask();
-	$('#p_Func').show().ScrollTo(600);
+	$('#p_Func').show().ScrollTo(500);
 	$('#c_Class').mask('#F8FBFD');
 }
 
 function back_class() {
-	$('#p_Func').hide();
-	$('#p_Set').hide();
-	$('#p_Person').hide();
 	$('#c_Class').removeMask();
 	$('#t_Class a').hide();
-	$('#p_Class').ScrollTo(600);
+	$('#p_Class').ScrollTo(300, function() {
+		$('#p_Func').hide();
+		$('#p_Set').hide();
+		$('#p_Person').hide();
+	});
 }
 
 function back_func() {
-	$('#p_Set').hide();
-	$('#p_Person').hide();
 	$('#c_Func').removeMask();
 	$('#t_Func a').html("返回上一步").unbind().click(back_class);
-	$('#p_Func').ScrollTo(600);
+	$('#p_Func').ScrollTo(300, function() {
+		$('#p_Set').hide();
+		$('#p_Person').hide();
+	});
 }
 
 function back_set() {
-	$('#p_Person').hide();
 	$('#c_Set').removeMask();
 	$('#t_Set a').html("返回上一步").unbind().click(back_func);
-	$('#p_Set').ScrollTo(600);
+	$('#p_Set').ScrollTo(300,function(){
+			$('#p_Person').hide();
+	});
 }
 
 function goto_dian_all() {
@@ -323,7 +325,7 @@ function goto_dian_rnd() {
 	$('#radio_2').attr("checked", false);
 	$('#t_Func a').html("返回到此步").unbind().click(back_func);
 	$('#t_Set a').html("返回上一步").unbind().click(back_func);
-	$('#p_Set').show().ScrollTo(600);
+	$('#p_Set').show().ScrollTo(500);
 
 }
 
@@ -337,7 +339,7 @@ function goto_view() {
 	$('#p_Person .ctrl').mask();
 	$('#c_Func').mask();
 	$('#info_date').show();
-	$('#p_Person').show().ScrollTo(600);
+	$('#p_Person').show().ScrollTo(500);
 	$('#t_Person a').unbind().click(back_func);
 	show_date_view(today);
 	//$('#finish_dian').html("修改点名").click(finish_diandao);

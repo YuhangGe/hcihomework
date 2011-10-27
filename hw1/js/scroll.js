@@ -55,14 +55,14 @@ jQuery.intval = function (v)
     return isNaN(v) ? 0 : v;
 };
 
-jQuery.fn.ScrollTo = function(s) {
+jQuery.fn.ScrollTo = function(s, callBack) {
     o = jQuery.speed(s);
     return this.each(function(){
-        new jQuery.fx.ScrollTo(this, o);
+        new jQuery.fx.ScrollTo(this, o, callBack);
     });
 };
 
-jQuery.fx.ScrollTo = function (e, o)
+jQuery.fx.ScrollTo = function (e, o, callBack)
 {
     var z = this;
     z.o = o;
@@ -76,7 +76,7 @@ jQuery.fx.ScrollTo = function (e, o)
         var p = (t - z.t) / z.o.duration;
         if (t >= z.o.duration+z.t) {
             z.clear();
-            setTimeout(function(){z.scroll(z.p.y, z.p.x)},13);
+            setTimeout(function(){z.scroll(z.p.y, z.p.x);if(typeof callBack==='function'){callBack();}},13);
         } else {
             st = ((-Math.cos(p*Math.PI)/2) + 0.5) * (z.p.y-z.s.t) + z.s.t;
             sl = ((-Math.cos(p*Math.PI)/2) + 0.5) * (z.p.x-z.s.l) + z.s.l;

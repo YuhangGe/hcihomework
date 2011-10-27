@@ -38,17 +38,20 @@ input[type="text"], input[type="password"], textarea {
 	margin: 0px auto;
 	padding: 0px 20px;
 	text-align: left;
-	min-height: 500px;
+	min-height: 600px;
 }
 #footer{
 	background: #292929;
 	color: white;
 	text-align: center;
-	margin-top:100px;
+	margin-top:150px;
 	color: gray;
 	text-align: center;
 }
 
+#footer h2{
+	text-size: 20px;
+}
 .title h1{
 	color: #333333;
     float: left;
