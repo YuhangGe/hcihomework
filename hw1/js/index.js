@@ -341,6 +341,7 @@ function goto_view() {
 	$('#info_date').show();
 	$('#p_Person').show().ScrollTo(500);
 	$('#t_Person a').unbind().click(back_func);
+	$('#t_Func a').html("返回到此步").unbind().click(back_func);
 	show_date_view(today);
 	//$('#finish_dian').html("修改点名").click(finish_diandao);
 }
