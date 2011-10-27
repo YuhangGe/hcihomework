@@ -179,7 +179,7 @@ $(function() {
 		} else {
 			num = Math.floor(Number($('#t_pbfb').val()) / 100 * students.length);
 		}
-		if(!num) {
+		if(!num || num>students.length || num<0) {
 			alert('输入错误');
 		} else {
 			$('#c_Set').mask('#F8FBFD');

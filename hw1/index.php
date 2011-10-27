@@ -143,34 +143,6 @@ include 'common.php';
 					</div>
 				</div>
 			</div>
-			<!--			<div id="content">
-			<div class="col-main">
-			<div id="container">
-			<div id="panel">
-
-			</div>
-			<div id="ctrl">
-			<a id="pre_page" href="javascript:pre_page();">上一页</a><a id="next_page" href="javascript:next_page();">下一页</a><a href="javascript:finishDiandao();" >完成点名</a>
-			</div>
-			<div id="tip">
-			<input id="beginDD" type="button" value="开始点到" onclick="diandao_all();"/>
-			</div>
-			</div>
-			<div id="view">
-			<h5>查看点到和检查记录</h5>
-			<div>选择日期：<input type="text" id="popDate" /><input type="button" value="" /></div>
-			</div>
-			</div>
-			<div class="col-sub">
-			<ul>
-			<li><a href="javascript:diandao('all');">完整点名</a></li>
-			<li><a href="javascript:diandao('rand');">随机点到</a></li>
-			<li><a href="javascript:choucha();">作业抽查</a></li>
-			<li><a href="javascript:view();">查看记录</a></li>
-			</ul>
-			</div>
-			<div class="clear"></div>
-			</div> -->
 			<div id="footer">
 				<h2>花名册系统</h2>
 				<p>
