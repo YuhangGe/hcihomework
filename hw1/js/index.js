@@ -37,11 +37,10 @@ function begin_diandao(type, num) {
 			bad_stu.length = 0;
 
 			do_diandao(type, num);
-			if(type==="all"){
+			if(type === "all") {
 				$('#t_Func a').html("返回到此步").unbind().click(back_func);
 				$('#t_Person a').unbind().click(back_func);
-			}				
-			else if(type==="rand"){
+			} else if(type === "rand") {
 				$('#t_Set a').html("返回到此步").unbind().click(back_set);
 				$('#t_Person a').unbind().click(back_set);
 			}
@@ -106,7 +105,7 @@ function render_page() {
 
 }
 
-function render_student(index, type) {
+function render_student(index) {
 	//$.log(index);
 	var stu = check_stu[index];
 	var n_div = $('<div class="person">');
@@ -115,21 +114,17 @@ function render_student(index, type) {
 		n_div.find(".p_mask").show();
 		n_div.find(".p_tip").show();
 	}
-	if(type === 0) {
-		n_div.click(function() {
-			if(bad_stu[index] === true) {
-				$(this).find(".p_mask").hide();
-				$(this).find(".p_tip").hide();
-				bad_stu[index] = false;
-			} else {
-				$(this).find(".p_mask").show();
-				$(this).find(".p_tip").show();
-				bad_stu[index] = true;
-			}
-		});
-	} else {
-
-	}
+	n_div.click(function() {
+		if(bad_stu[index] === true) {
+			$(this).find(".p_mask").hide();
+			$(this).find(".p_tip").hide();
+			bad_stu[index] = false;
+		} else {
+			$(this).find(".p_mask").show();
+			$(this).find(".p_tip").show();
+			bad_stu[index] = true;
+		}
+	});
 }
 
 function goto_next_page() {
@@ -179,10 +174,10 @@ $(function() {
 	});
 	$('#btn_dian').click(function() {
 		var num = 0;
-		if($('#radio_1').attr('checked') != false) {
+		if($('#radio_1').attr('checked') =="checked") {
 			num = Number($('#t_pnum').val());
 		} else {
-			n_val = Math.floor(Number($('#t_pbfb').val()) / 100 * students.length);
+			num = Math.floor(Number($('#t_pbfb').val()) / 100 * students.length);
 		}
 		if(!num) {
 			alert('输入错误');
@@ -244,7 +239,8 @@ function login_event(argument) {
 			$('#t_Login a').html(rtn.name + "，登出");
 			$('#c_Class').html('');
 			for(var i = 0; i < rtn.classes.length; i++) {
-				var c = rtn.classes[i]; (function() {
+				var c = rtn.classes[i];
+				(function() {
 					var cc = c;
 					$('<div class="class_div">').html('<h4 class="c_title">' + c.name + '</h4>').appendTo('#c_Class').click(function() {
 						goto_class(cc.id, cc.name);
@@ -296,19 +292,21 @@ function back_class() {
 	$('#p_Class').ScrollTo(600);
 }
 
-function back_func(){
+function back_func() {
 	$('#p_Set').hide();
 	$('#p_Person').hide();
 	$('#c_Func').removeMask();
 	$('#t_Func a').html("返回上一步").unbind().click(back_class);
 	$('#p_Func').ScrollTo(600);
 }
-function back_set(){
+
+function back_set() {
 	$('#p_Person').hide();
 	$('#c_Set').removeMask();
 	$('#t_Set a').html("返回上一步").unbind().click(back_func);
 	$('#p_Set').ScrollTo(600);
 }
+
 function goto_dian_all() {
 	$('#c_Func').mask('#F8FBFD');
 	begin_diandao("all");
